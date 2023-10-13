@@ -1,3 +1,3 @@
 FROM openjdk:17
-COPY target/*.jar Pickem-api.jar
-ENTRYPOINT ["java", "-jar", "/Pickem-api.jar"]
+COPY target/*.jar pickem-back.jar
+ENTRYPOINT ["java", "-jar", "/pickem-back.jar"]
