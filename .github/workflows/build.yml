@@ -53,4 +53,4 @@ jobs:
             docker stop pickem-back || true
             docker rm pickem-back || true
             docker pull nairolfln/pickem-back:latest
-            docker run -d --name pickem-back --network sugarrushnetwork -p 8000:8080 nairolfln/pickem-back:latest
+            docker run -d --name pickem-back --network pickemnetwork -p 8010:8080 nairolfln/pickem-back:latest
