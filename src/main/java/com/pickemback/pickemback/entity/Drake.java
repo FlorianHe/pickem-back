@@ -1,9 +1,13 @@
 package com.pickemback.pickemback.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Drake {
@@ -13,14 +17,11 @@ public class Drake {
 
     private String type;
 
-    private Integer killed;
-
     public Drake() {
     }
 
-    public Drake(String type, Integer killed) {
+    public Drake(String type) {
         this.type = type;
-        this.killed = killed;
     }
 
     public Long getId() {
@@ -35,12 +36,5 @@ public class Drake {
         this.type = type;
     }
 
-    public Integer getKilled() {
-        return killed;
-    }
-
-    public void setKilled(Integer killed) {
-        this.killed = killed;
-    }
 
 }

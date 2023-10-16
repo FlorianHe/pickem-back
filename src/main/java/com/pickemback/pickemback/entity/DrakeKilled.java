@@ -10,16 +10,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Ban {
-
+public class DrakeKilled {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "champion_id")
+    @JoinColumn(name = "drake_id")
     @JsonIdentityReference(alwaysAsId = true)
-    private Champion champion;
+    private Drake drake;
 
     @ManyToOne
     @JoinColumn(name = "team_id")
@@ -31,25 +30,21 @@ public class Ban {
     @JsonIdentityReference(alwaysAsId = true)
     private Game game;
 
-    public Ban() {
+    public DrakeKilled() {
     }
 
-    public Ban(Champion champion, Team team, Game game) {
-        this.champion = champion;
+    public DrakeKilled(Drake drake, Team team, Game game) {
+        this.drake = drake;
         this.team = team;
         this.game = game;
     }
 
-    public Long getId() {
-        return id;
+    public Drake getDrake() {
+        return drake;
     }
 
-    public Champion getChampion() {
-        return champion;
-    }
-
-    public void setChampion(Champion champion) {
-        this.champion = champion;
+    public void setDrake(Drake drake) {
+        this.drake = drake;
     }
 
     public Team getTeam() {
@@ -67,5 +62,4 @@ public class Ban {
     public void setGame(Game game) {
         this.game = game;
     }
-
 }

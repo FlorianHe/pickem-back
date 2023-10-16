@@ -18,7 +18,7 @@ public class BO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "bO", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "bo", cascade = CascadeType.REMOVE)
     @JsonManagedReference
     @JsonIgnore
     private List<Game> listBOs;

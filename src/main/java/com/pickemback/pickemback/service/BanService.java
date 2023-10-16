@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.pickemback.pickemback.entity.Ban;
+import com.pickemback.pickemback.entity.Pick;
 import com.pickemback.pickemback.repository.BanRepository;
 
 @Service
@@ -21,6 +22,10 @@ public class BanService {
 
     public Ban show(Long id) {
         return banRepository.findById(id).get();
+    }
+
+    public List<Ban> getBansByGameAndTeam(Long gameId, Long teamId) {
+        return banRepository.getByGameIdAndTeamId(gameId, teamId);
     }
 
     public Ban create(Ban ban) {

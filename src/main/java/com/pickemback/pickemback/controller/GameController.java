@@ -38,6 +38,11 @@ public class GameController {
         return gameService.getGamesByDuration(order, limit);
     }
 
+    @GetMapping("/bo/{id}")
+    public List<Game> getGamesByBo(@PathVariable Long id) {
+        return gameService.getGamesByBO(id);
+    }
+
     @PostMapping
     public Game create(@RequestBody Game game) {
         return gameService.create(game);

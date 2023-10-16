@@ -35,6 +35,11 @@ public class Player {
     @JsonIgnore
     private List<Pick> listPicks;
 
+    @OneToMany(mappedBy = "player", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
+    @JsonIgnore
+    private List<KDA> listKDAs;
+
     public Player() {
     }
 

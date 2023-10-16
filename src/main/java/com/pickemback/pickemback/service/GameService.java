@@ -4,15 +4,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.pickemback.pickemback.entity.BO;
 import com.pickemback.pickemback.entity.Game;
+import com.pickemback.pickemback.entity.Player;
+import com.pickemback.pickemback.entity.Team;
+import com.pickemback.pickemback.repository.BORepository;
 import com.pickemback.pickemback.repository.GameRepository;
 
 @Service
 public class GameService {
     private final GameRepository gameRepository;
+    private final BORepository boRepository;
 
-    public GameService(GameRepository gameRepository) {
+    public GameService(GameRepository gameRepository, BORepository boRepository) {
         this.gameRepository = gameRepository;
+        this.boRepository = boRepository;
     }
 
     public List<Game> getAllGames() {
@@ -23,7 +29,11 @@ public class GameService {
         if (order.equals("ASC"))
             return gameRepository.findGameWithShortestDuration(limit);
         return gameRepository.findGameWithLongestDuration(limit);
-        
+    }
+
+    public List<Game> getGamesByBO(Long id) {
+        BO bo = boRepository.findById(id).get();
+        return gameRepository.findGamesByBO(bo);
     }
 
     public Game show(Long id) {
