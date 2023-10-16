@@ -10,15 +10,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Pick {
+public class KDA {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "champion_id")
-    @JsonIdentityReference(alwaysAsId = true)
-    private Champion champion;
 
     @ManyToOne
     @JoinColumn(name = "player_id")
@@ -30,31 +25,24 @@ public class Pick {
     @JsonIdentityReference(alwaysAsId = true)
     private Game game;
 
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    @JsonIdentityReference(alwaysAsId = true)
-    private Team team;
+    private Integer kills;
 
-    public Pick() {
+    private Integer death;
+
+    private Integer assist;
+
+    private double kda;
+
+    public KDA() {
     }
     
-    public Pick(Champion champion, Player player, Game game, Team team) {
-        this.champion = champion;
+    public KDA(Player player, Game game, Integer kills, Integer death, Integer assist, double kda) {
         this.player = player;
         this.game = game;
-        this.team = team;
-    }
-
-    public Long getId() {
-        return id;
-    }
-    
-    public Champion getChampion() {
-        return champion;
-    }
-
-    public void setChampion(Champion champion) {
-        this.champion = champion;
+        this.kills = kills;
+        this.death = death;
+        this.assist = assist;
+        this.kda = kda;
     }
 
     public Player getPlayer() {
@@ -73,12 +61,36 @@ public class Pick {
         this.game = game;
     }
 
-    public Team getTeam() {
-        return team;
+    public Integer getKills() {
+        return kills;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setKills(Integer kills) {
+        this.kills = kills;
+    }
+
+    public Integer getDeath() {
+        return death;
+    }
+
+    public void setDeath(Integer death) {
+        this.death = death;
+    }
+
+    public Integer getAssist() {
+        return assist;
+    }
+
+    public void setAssist(Integer assist) {
+        this.assist = assist;
+    }
+
+    public double getKda() {
+        return kda;
+    }
+
+    public void setKda(double kda) {
+        this.kda = kda;
     }
 
 }

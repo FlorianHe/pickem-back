@@ -23,6 +23,10 @@ public class PickService {
         return pickRepository.findById(id).get();
     }
 
+    public List<Pick> getPicksByGameAndTeam(Long gameId, Long teamId) {
+        return pickRepository.getByGameIdAndTeamId(gameId, teamId);
+    }
+
     public Pick create(Pick pick) {
         return pickRepository.save(pick);
     }

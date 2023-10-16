@@ -11,7 +11,6 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Pentakill {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,11 +20,17 @@ public class Pentakill {
     @JsonIdentityReference(alwaysAsId = true)
     private Player player;
 
+    @ManyToOne
+    @JoinColumn(name = "game_id")
+    @JsonIdentityReference(alwaysAsId = true)
+    private Game game;
+
     public Pentakill() {
     }
 
-    public Pentakill(Player player) {
+    public Pentakill(Player player, Game game) {
         this.player = player;
+        this.game = game;
     }
 
     public Long getId() {
@@ -39,4 +44,13 @@ public class Pentakill {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
 }

@@ -25,25 +25,35 @@ public class Team {
     @JsonIgnore
     private List<Player> listPlayers;
 
-    @OneToMany(mappedBy = "teamHome", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "teamBlue", cascade = CascadeType.REMOVE)
     @JsonManagedReference
     @JsonIgnore
-    private List<Game> listGamesHome;
+    private List<Game> listGamesBlue;
+
+    @OneToMany(mappedBy = "teamRed", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
+    @JsonIgnore
+    private List<Game> listGamesRed;
 
     @OneToMany(mappedBy = "teamWinner", cascade = CascadeType.REMOVE)
     @JsonManagedReference
     @JsonIgnore
     private List<Game> listGamesWinner;
 
-    @OneToMany(mappedBy = "teamAway", cascade = CascadeType.REMOVE)
-    @JsonManagedReference
-    @JsonIgnore
-    private List<Game> listGamesAway;
-
     @OneToMany(mappedBy = "team", cascade = CascadeType.REMOVE)
     @JsonManagedReference
     @JsonIgnore
     private List<Ban> listBans;
+
+    @OneToMany(mappedBy = "team", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
+    @JsonIgnore
+    private List<DrakeKilled> listDrakes;
+    
+    @OneToMany(mappedBy = "team", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
+    @JsonIgnore
+    private List<Pick> listPicks;
 
     public Team() {
     }

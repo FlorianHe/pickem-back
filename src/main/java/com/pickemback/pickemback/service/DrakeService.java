@@ -29,7 +29,6 @@ public class DrakeService {
 
     public Drake update(Long id, Drake drake) {
         Drake drakeToUpdate = drakeRepository.findById(id).get();
-        drakeToUpdate.setKilled(drake.getKilled() + drakeToUpdate.getKilled());
         return drakeRepository.save(drakeToUpdate);
     }
 
