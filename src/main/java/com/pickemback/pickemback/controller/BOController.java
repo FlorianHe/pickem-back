@@ -28,6 +28,11 @@ public class BOController {
         return bOService.getAllBOs();
     }
 
+    @GetMapping("/last")
+    public BO getLastBO() {
+        return bOService.getLastBO();
+    }
+
     @GetMapping("/{id}")
     public BO show(@PathVariable Long id) {
         return bOService.show(id);

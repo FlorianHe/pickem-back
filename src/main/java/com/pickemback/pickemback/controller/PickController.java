@@ -33,6 +33,11 @@ public class PickController {
         return pickService.show(id);
     }
 
+    @GetMapping("/game/{game_id}/team/{team_id}")
+    public List<Pick> getPicksByGameAndTeam(@PathVariable Long game_id, @PathVariable Long team_id) {
+        return pickService.getPicksByGameAndTeam(game_id, team_id);
+    }
+
     @PostMapping
     public Pick create(@RequestBody Pick pick) {
         return pickService.create(pick);

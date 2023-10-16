@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pickemback.pickemback.entity.Ban;
+import com.pickemback.pickemback.entity.Pick;
 import com.pickemback.pickemback.service.BanService;
 
 @RestController
@@ -31,6 +32,11 @@ public class BanController {
     @GetMapping("/{id}")
     public Ban show(@PathVariable Long id) {
         return banService.show(id);
+    }
+
+    @GetMapping("/game/{game_id}/team/{team_id}")
+    public List<Ban> getBansByGameAndTeam(@PathVariable Long game_id, @PathVariable Long team_id) {
+        return banService.getBansByGameAndTeam(game_id, team_id);
     }
 
     @PostMapping

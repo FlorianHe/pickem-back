@@ -38,12 +38,12 @@ public class DbInit {
     private void postConstruct() {
         if (drakeRepository.count() == 0) {
             List<Drake> drakes = new ArrayList<>();
-            drakes.add(new Drake("Infernal", 0));
-            drakes.add(new Drake("Mountain", 0));
-            drakes.add(new Drake("Ocean", 0));
-            drakes.add(new Drake("Hextech", 0));
-            drakes.add(new Drake("Chemtech", 0));
-            drakes.add(new Drake("Cloud", 0));
+            drakes.add(new Drake("Infernal"));
+            drakes.add(new Drake("Mountain"));
+            drakes.add(new Drake("Ocean"));
+            drakes.add(new Drake("Hextech"));
+            drakes.add(new Drake("Chemtech"));
+            drakes.add(new Drake("Cloud"));
 
             for (Drake drake : drakes) {
                 drake = drakeRepository.save(drake);
@@ -51,28 +51,28 @@ public class DbInit {
         }
         if (teamRepository.count() == 0) {
             List<Team> teams = new ArrayList<>();
-            teams.add(new Team("⁠Gen.G"));
-            teams.add(new Team("⁠T1"));
-            teams.add(new Team("⁠KT Rolster"));
-            teams.add(new Team("⁠Dplus KIA"));
-            teams.add(new Team("⁠JD Gaming"));
-            teams.add(new Team("⁠Bilibili Gaming"));
-            teams.add(new Team("⁠LNG Esports"));
-            teams.add(new Team("⁠Weibo Gaming"));
-            teams.add(new Team("⁠G2 Esports"));
-            teams.add(new Team("⁠Fnatic"));
-            teams.add(new Team("⁠MAD Lions"));
-            teams.add(new Team("⁠NRG"));
-            teams.add(new Team("⁠Cloud9"));
-            teams.add(new Team("⁠Team Liquid"));
+            teams.add(new Team("Gen.G"));
+            teams.add(new Team("T1"));
+            teams.add(new Team("KT Rolster"));
+            teams.add(new Team("Dplus KIA"));
+            teams.add(new Team("JD Gaming"));
+            teams.add(new Team("Bilibili Gaming"));
+            teams.add(new Team("LNG Esports"));
+            teams.add(new Team("Weibo Gaming"));
+            teams.add(new Team("G2 Esports"));
+            teams.add(new Team("Fnatic"));
+            teams.add(new Team("MAD Lions"));
+            teams.add(new Team("NRG"));
+            teams.add(new Team("Cloud9"));
+            teams.add(new Team("Team Liquid"));
             teams.add(new Team("PSG Talon"));
-            teams.add(new Team("⁠CTBC Flying Oyster"));
-            teams.add(new Team("⁠GAM Esports"));
-            teams.add(new Team("⁠Team Whales"));
-            teams.add(new Team("⁠DetonatioN FocusMe"));
-            teams.add(new Team("⁠LOUD"));
-            teams.add(new Team("⁠Movistar R7"));
-            teams.add(new Team("⁠Team BDS"));
+            teams.add(new Team("CTBC Flying_Oyster"));
+            teams.add(new Team("GAM Esports"));
+            teams.add(new Team("Team Whales"));
+            teams.add(new Team("DetonatioN FocusMe"));
+            teams.add(new Team("LOUD"));
+            teams.add(new Team("Movistar R7"));
+            teams.add(new Team("Team BDS"));
 
             for (Team team : teams) {
                 team = teamRepository.save(team);
@@ -81,98 +81,98 @@ public class DbInit {
         if (playerRepository.count() == 0) {
             List<Team> teams = teamRepository.findAll();
             Map<String, List<Player>> teamPlayersMap = new HashMap<>();
-            teamPlayersMap.put("⁠Gen.G", Arrays.asList(
+            teamPlayersMap.put("Gen.G", Arrays.asList(
                 new Player("Doran", "Top"),
                 new Player("Peanut", "Jungle"),
                 new Player("Chovy", "Mid"),
                 new Player("Peyz", "ADC"),
                 new Player("Delight", "Support")
             ));
-            teamPlayersMap.put("⁠T1", Arrays.asList(
+            teamPlayersMap.put("T1", Arrays.asList(
                 new Player("Zeus", "Top"),
                 new Player("Oner", "Jungle"),
                 new Player("Faker", "Mid"),
                 new Player("Gumayusi", "ADC"),
                 new Player("Keria", "Support")
             ));
-            teamPlayersMap.put("⁠⁠KT Rolster", Arrays.asList(
+            teamPlayersMap.put("KT Rolster", Arrays.asList(
                 new Player("Kiin", "Top"),
                 new Player("Cuzz", "Jungle"),
                 new Player("Bdd", "Mid"),
                 new Player("Aiming", "ADC"),
                 new Player("Lehends", "Support")
             ));
-            teamPlayersMap.put("⁠Dplus KIA", Arrays.asList(
+            teamPlayersMap.put("Dplus KIA", Arrays.asList(
                 new Player("Canna", "Top"),
                 new Player("Canyon", "Jungle"),
                 new Player("ShowMaker", "Mid"),
                 new Player("Deft", "ADC"),
                 new Player("Bible", "Support")
             ));
-            teamPlayersMap.put("⁠JD Gaming", Arrays.asList(
+            teamPlayersMap.put("JD Gaming", Arrays.asList(
                 new Player("369", "Top"),
                 new Player("Kanavi", "Jungle"),
                 new Player("knight", "Mid"),
                 new Player("Ruler", "ADC"),
                 new Player("MISSING", "Support")
             ));
-            teamPlayersMap.put("⁠Bilibili Gaming", Arrays.asList(
+            teamPlayersMap.put("Bilibili Gaming", Arrays.asList(
                 new Player("Bin", "Top"),
                 new Player("Xun", "Jungle"),
                 new Player("Yagao", "Mid"),
                 new Player("Elk", "ADC"),
                 new Player("ON", "Support")
             ));
-            teamPlayersMap.put("⁠LNG Esports", Arrays.asList(
+            teamPlayersMap.put("LNG Esports", Arrays.asList(
                 new Player("Zika", "Top"),
                 new Player("Tarzan", "Jungle"),
                 new Player("Scout", "Mid"),
                 new Player("GALA", "ADC"),
                 new Player("Hang", "Support")
             ));
-            teamPlayersMap.put("⁠Weibo Gaming", Arrays.asList(
+            teamPlayersMap.put("Weibo Gaming", Arrays.asList(
                 new Player("TheShy", "Top"),
                 new Player("Weiwei", "Jungle"),
                 new Player("Xiaohu", "Mid"),
                 new Player("Light", "ADC"),
                 new Player("Crisp", "Support")
             ));
-            teamPlayersMap.put("⁠G2 Esports", Arrays.asList(
+            teamPlayersMap.put("G2 Esports", Arrays.asList(
                 new Player("BrokenBlade", "Top"),
                 new Player("Yike", "Jungle"),
                 new Player("Caps", "Mid"),
                 new Player("Hans Sama", "ADC"),
                 new Player("Mikyx", "Support")
             ));
-            teamPlayersMap.put("⁠Fnatic", Arrays.asList(
+            teamPlayersMap.put("Fnatic", Arrays.asList(
                 new Player("Oscarinin", "Top"),
                 new Player("Razork", "Jungle"),
                 new Player("Humanoid", "Mid"),
                 new Player("Noah", "ADC"),
                 new Player("Trymbi", "Support")
             ));
-            teamPlayersMap.put("⁠MAD Lions", Arrays.asList(
+            teamPlayersMap.put("MAD Lions", Arrays.asList(
                 new Player("Chasy", "Top"),
                 new Player("Elyoya", "Jungle"),
                 new Player("Nisqy", "Mid"),
                 new Player("Carzzy", "ADC"),
                 new Player("Hylissang", "Support")
             ));
-            teamPlayersMap.put("⁠NRG", Arrays.asList(
+            teamPlayersMap.put("NRG", Arrays.asList(
                 new Player("Dhokla", "Top"),
                 new Player("Contractz", "Jungle"),
                 new Player("Palafox", "Mid"),
                 new Player("FBI", "ADC"),
                 new Player("Ignar", "Support")
             ));
-            teamPlayersMap.put("⁠Cloud9", Arrays.asList(
+            teamPlayersMap.put("Cloud9", Arrays.asList(
                 new Player("Fudge", "Top"),
                 new Player("Blaber", "Jungle"),
                 new Player("EMENES", "Mid"),
                 new Player("Berserker", "ADC"),
                 new Player("Zven", "Support")
             ));
-            teamPlayersMap.put("⁠Team Liquid", Arrays.asList(
+            teamPlayersMap.put("Team Liquid", Arrays.asList(
                 new Player("Summit", "Top"),
                 new Player("Pyosik", "Jungle"),
                 new Player("APA", "Mid"),
@@ -186,49 +186,49 @@ public class DbInit {
                 new Player("Wako", "ADC"),
                 new Player("Woody", "Support")
             ));
-            teamPlayersMap.put("⁠CTBC Flying Oyster", Arrays.asList(
+            teamPlayersMap.put("CTBC Flying_Oyster", Arrays.asList(
                 new Player("Rest", "Top"),
                 new Player("Gemini", "Jungle"),
                 new Player("JimieN", "Mid"),
                 new Player("Shunn", "ADC"),
                 new Player("ShiauC", "Support")
             ));
-            teamPlayersMap.put("⁠GAM Esports", Arrays.asList(
+            teamPlayersMap.put("GAM Esports", Arrays.asList(
                 new Player("Kiaya", "Top"),
                 new Player("Levi", "Jungle"),
                 new Player("Kati", "Mid"),
                 new Player("Slayder", "ADC"),
                 new Player("Palette", "Support")
             ));
-            teamPlayersMap.put("⁠Team Whales", Arrays.asList(
+            teamPlayersMap.put("Team Whales", Arrays.asList(
                 new Player("Sparda", "Top"),
                 new Player("BeanJ", "Jungle"),
                 new Player("Glory", "Mid"),
                 new Player("Artemis", "ADC"),
                 new Player("Bie", "Support")
             ));
-            teamPlayersMap.put("⁠DetonatioN FocusMe", Arrays.asList(
+            teamPlayersMap.put("DetonatioN FocusMe", Arrays.asList(
                 new Player("ApaMen", "Top"),
                 new Player("Steal", "Jungle"),
                 new Player("Aria", "Mid"),
                 new Player("Yutapon", "ADC"),
                 new Player("Harp", "Support")
             ));
-            teamPlayersMap.put("⁠LOUD", Arrays.asList(
+            teamPlayersMap.put("LOUD", Arrays.asList(
                 new Player("Robo", "Top"),
                 new Player("Croc", "Jungle"),
                 new Player("Tinowns", "Mid"),
                 new Player("Route", "ADC"),
                 new Player("Ceos", "Support")
             ));
-            teamPlayersMap.put("⁠Movistar R7", Arrays.asList(
+            teamPlayersMap.put("Movistar R7", Arrays.asList(
                 new Player("Bong", "Top"),
                 new Player("Oddie", "Jungle"),
                 new Player("Mireu", "Mid"),
                 new Player("Ceo", "ADC"),
                 new Player("Lyonz", "Support")
             ));
-            teamPlayersMap.put("⁠Team BDS", Arrays.asList(
+            teamPlayersMap.put("Team BDS", Arrays.asList(
                 new Player("Adam", "Top"),
                 new Player("Sheo", "Jungle"),
                 new Player("nuc", "Mid"),
