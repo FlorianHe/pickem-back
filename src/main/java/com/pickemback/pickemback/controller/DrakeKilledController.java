@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pickemback.pickemback.entity.DrakeKilled;
-import com.pickemback.pickemback.entity.Pick;
+import com.pickemback.pickemback.entity.DrakeKilledNumber;
 import com.pickemback.pickemback.service.DrakeKilledService;
 
 @RestController
@@ -37,6 +37,11 @@ public class DrakeKilledController {
     @GetMapping("/game/{game_id}/team/{team_id}")
     public List<DrakeKilled> getDrakesKilledByGameAndTeam(@PathVariable Long game_id, @PathVariable Long team_id) {
         return drakeKilledService.getDrakesKilledByGameAndTeam(game_id, team_id);
+    }
+
+    @GetMapping("/amount")
+    public List<DrakeKilledNumber> getAllDrakesGroupByAmount() {
+        return drakeKilledService.getAllDrakesGroupByAmount();
     }
 
     @PostMapping

@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.pickemback.pickemback.entity.BO;
 import com.pickemback.pickemback.entity.Game;
-import com.pickemback.pickemback.entity.Player;
-import com.pickemback.pickemback.entity.Team;
 import com.pickemback.pickemback.repository.BORepository;
 import com.pickemback.pickemback.repository.GameRepository;
 
