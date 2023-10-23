@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.pickemback.pickemback.entity.Ban;
 import com.pickemback.pickemback.entity.KDA;
 import com.pickemback.pickemback.repository.KDARepository;
 
