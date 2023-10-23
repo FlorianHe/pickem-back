@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pickemback.pickemback.entity.ChampionAmount;
 import com.pickemback.pickemback.entity.Pick;
+import com.pickemback.pickemback.entity.Winrate;
 import com.pickemback.pickemback.service.PickService;
 
 @RestController
@@ -38,6 +40,26 @@ public class PickController {
         return pickService.getPicksByGameAndTeam(game_id, team_id);
     }
 
+    @GetMapping("/amount")
+    public List<ChampionAmount> getPickAmounts() {
+        return pickService.getPickAmounts();
+    }
+
+    @GetMapping("/death")
+    public List<ChampionAmount> getTotalDeathsByChampion() {
+        return pickService.getTotalDeathsByChampion();
+    }
+
+    @GetMapping("/role")
+    public List<ChampionAmount> getDifferentRoleByChampion() {
+        return pickService.getDifferentRoleByChampion();
+    }
+
+    @GetMapping("/winrate")
+    public List<Winrate> getWinRateByChampion() {
+        return pickService.getWinRateByChampion();
+    }
+    
     @PostMapping
     public Pick create(@RequestBody Pick pick) {
         return pickService.create(pick);
